@@ -1,0 +1,60 @@
+:root {
+    --page-colour: #caebf8;
+    --background-colour: #053e7b;
+    --nav-colour: #0b6ab4;
+    --alt-font-colour: #ffffff;
+}
+
+* {
+    font-family: 'Times New Roman', Times, serif;
+    padding: 0;
+    margin: 0;
+    max-width: 1900px;
+}
+
+header,
+footer {
+    color: var(--alt-font-colour);
+    background-color: var(--background-colour);
+}
+
+h1 {
+    padding: 1rem;
+}
+
+header nav {
+    background-color: var(--nav-colour);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-decoration: none;
+}
+
+nav p {
+    padding: 1rem;
+}
+
+footer {
+    display: flex;
+    height: 5rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+footer p {
+    text-align: center;
+    padding: 10px;
+}
+
+.content {
+    display: flex;
+}
+
+.content main {
+    background-color: var(--page-colour);
+    height: 600px;
+    flex: 3
+}
+
+.content aside {
+    flex: 1;
+}
