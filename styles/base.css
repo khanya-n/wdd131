@@ -3,8 +3,7 @@
     --dark-colour: #222629;
     --accent-grey: #474b4f;
     --page-grey: #6b6e70;
-    --first-green: #61892f;
-    --second-green: #86c232;
+    --green: #86c232;
     --small-size: .5rem;
     --default-size: 1rem;
 }
@@ -16,29 +15,31 @@
     padding: 0;
     max-width: 1900px;
     color: var(--font-colour);
+    background-color: var(--page-grey);
 }
 
 header,
 footer {
-    background-color: var(--dark-colour);
     width: 100%;
 }
 
+header {
+    text-align: center;
+}
+
 header span {
+    background-color: var(--dark-colour);
     display: block;
     padding: var(--default-size);
-    text-align: center;
     font-weight: 600;
 }
 
 main {
     width: 70%;
-    background-color: var(--page-grey);
     margin: 0 auto;
 }
 
 body {
-    background-color: var(--page-grey);
     width: 100%;
 }
 
@@ -50,13 +51,14 @@ nav {
 }
 
 nav a {
+    background-color: var(--accent-grey);
     text-decoration: none;
     text-align: center;
     padding: var(--small-size);
 }
 
 nav a:hover {
-    color: var(--second-green);
+    color: var(--green);
 }
 
 
@@ -81,6 +83,11 @@ footer {
 
 footer p {
     padding: var(--small-size);
+    background-color: var(--dark-colour);
+}
+
+footer span {
+    background-color: var(--dark-colour);
 }
 
 .card {
@@ -94,7 +101,8 @@ footer p {
 }
 
 .card h2 {
-    background-color: var(--first-green);
+    background-color: var(--green);
+    color: var(--dark-colour);
     grid-column: 1/3;
     border-radius: var(--default-size) var(--default-size) 0 0;
 }
