@@ -1,0 +1,34 @@
+:root {
+    --normal-size: 1rem;
+    --accent-colour: #93dfe2;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+header,
+main,
+footer {
+    max-width: 640px;
+    margin: var(--normal-size) auto;
+    border:  solid 1px #909090;
+    padding: var(--normal-size) 10px;
+    background-color: var(--accent-colour);
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--normal-size);
+}
+
+section {
+    padding: 2rem var(--normal-size);
+    background-color: #ffffff;
+}
