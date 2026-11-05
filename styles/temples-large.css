@@ -13,6 +13,10 @@
     margin: .5rem var(--default-size);
     }
 
+    nav a {
+        font-size: medium;
+    }
+
     #navButton {
         display: none;
     }

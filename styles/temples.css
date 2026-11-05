@@ -44,13 +44,14 @@ nav {
 
 nav.open {
     display: flex;
-    justify-content: space-around;
-    margin: .5rem var(--default-size);
+    flex-flow: column wrap;
+    margin: .5rem auto;
 }
 
 nav a{
     color: var(--light-colour);
     text-decoration: none;
+    font-size: large;
 }
 
 nav a:hover {
@@ -68,7 +69,8 @@ h1 {
     text-align: center;
 }
 
-footer p{
+footer p,
+footer span {
     color: var(--light-colour);
 }
 
