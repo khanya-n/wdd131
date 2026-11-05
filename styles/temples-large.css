@@ -2,6 +2,20 @@
     .temple-list {
         grid-template-columns: 1fr 1fr;
     }
+
+    header {
+    grid-template-columns: 1fr 1fr;
+}
+
+    nav {
+    display: flex;
+    justify-content: space-around;
+    margin: .5rem var(--default-size);
+    }
+
+    #navButton {
+        display: none;
+    }
 }
 
 @media (min-width: 1200px) {

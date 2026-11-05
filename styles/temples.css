@@ -28,7 +28,7 @@ footer {
 
 header {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 100px;
 }
 
 header h1 {
@@ -39,6 +39,10 @@ header h1 {
 }
 
 nav {
+    display: none;
+}
+
+nav.open {
     display: flex;
     justify-content: space-around;
     margin: .5rem var(--default-size);
@@ -66,6 +70,12 @@ h1 {
 
 footer p{
     color: var(--light-colour);
+}
+
+#navButton {
+    background-color: var(--dark-accent);
+    color: var(--light-colour);
+    border: 1px solid var(--light-accent);
 }
 
 .temple-list {
