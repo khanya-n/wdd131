@@ -29,9 +29,6 @@ footer {
 header {
     display: grid;
     grid-template-columns: 1fr 100px;
-}
-
-header {
     font-weight: 700;
     font-size: x-large;
     color: var(--light-colour);
