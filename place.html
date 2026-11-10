@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Information about the physical geography, population data and weather of South Africa, along with other facts.">
+    <meta name="author" content="Khanya Nyathikazi">
+    <title>WDD 131 | South Africa</title>
+
+    <link rel="stylesheet" href="styles/place.css">
+    <link rel="stylesheet" href="styles/place-large.css">
+
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>South Africa</h1>
+    </header>
+    <body>
+        <picture>
+            <source srcset="images/hero-large.webp" media="min-width: 630">
+            <img src="images/hero-small.webp" alt="Sandton, South Africa">
+        </picture>
+        <div class="info">
+            <div class="info-heading">
+                <h2>Data</h2>
+            </div>
+            <span class="label">Area:</span>
+            <span>1,221,037 sq km</span>
+            <span class="label">Population:</span>
+            <span>63,015,904</span>
+            <span class="label">Capitals:</span>
+            <span>Pretoria, Cape Town, Bloemfontein</span>
+            <span class="label">Official Spoken Languages:</span>
+            <span>Afrikaans, English, isiNdebele, isiXhosa, isiZulu, Sepedi, Sesotho, Setswana, Siswati, Tshivenda, Xitsonga</span>
+            <span class="label">Currency:</span>
+            <span>South African Rand</span>
+            <span class="label">Time Zone:</span>
+            <span>UTC+2</span>
+            <span class="label">Calling Code:</span>
+            <span>+27</span>
+            <span class="label">Internet TLD:</span>
+            <span>.za</span>
+        </div>
+        <div class="info">
+            <div class="info-heading">
+                <h2>Weather</h2>
+                <img src="images/partly_cloudy_day.svg" alt="Partly cloudy day icon">
+            </div>
+            <span class="label">Temperature:</span>
+            <span>30 °C</span>
+            <span class="label">Conditions:</span>
+            <span>Partly Cloudy</span>
+            <span class="label">Wind:</span>
+            <span>14 km/h</span>
+            <span class="label">Wind Chill</span>
+            <span id="windChill"></span>
+        </div>
+    </body>
+    <footer>
+        <p>
+            &copy;<span id="currentyear"></span> | Khanya Nyathikazi | South Africa
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
