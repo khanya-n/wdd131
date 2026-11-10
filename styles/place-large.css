@@ -5,7 +5,7 @@
         aspect-ratio: 2/1;
     }
     .info-heading {
-        background-color: rgb(255, 184, 28, 60%);
+        background-color: rgb(255, 184, 28, 40%);
     }
 
     .info-heading img {
@@ -28,6 +28,10 @@
     #weather {
         left: 70%;
         width: 25%;
+    }
+
+    #weather h2::after {
+        content: "🌤️";
     }
 
     #data {
