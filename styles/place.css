@@ -67,3 +67,8 @@ footer {
     width: 20%;
     padding: var(--default-size);
 }
+
+.hero {
+    width: 100%;
+    display: block;
+}
