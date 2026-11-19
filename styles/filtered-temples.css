@@ -88,12 +88,14 @@ footer {
 .temple {
     text-align: center;
     padding: var(--default-size);
+    font-weight: 300;
 }
 
 .temple img {
-    width: 90%
+    width: 90%;
+    max-height: 225px;
 }
 
-.temple figcaption {
-    font-weight: 300;
+.temple span{
+    text-align: right;
 }

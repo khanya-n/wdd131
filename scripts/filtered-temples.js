@@ -86,8 +86,80 @@ const temples = [
     }
 ];
 
-function templeHTML(name, location, dedicated, area, url) {
-    return `<h2>${name}</h2>\n<span>Location:</span> ${location}\n<span>Dedicated:</span> ${dedicated}\n<span>Size:</span> ${area} sq ft\n<img src="${url}" alt="${name}" loading="lazy">`
+function populateSection(temple, templeSection) {
+    const heading = document.createElement("h2");
+    const location = document.createElement("p");
+    const dedicated = document.createElement("p");
+    const area = document.createElement("p");
+    const image = document.createElement("img");
+
+    heading.textContent = temple.templeName;
+    location.innerHTML = `<span>Location:</span> ${temple.location}`
+    dedicated.innerHTML = `<span>Dedicated:</span> ${temple.dedicated}`
+    area.innerHTML = `<span>Size:</span> ${temple.area} sq ft`
+    image.setAttribute("src", temple.imageUrl);
+    image.setAttribute("alt", `${temple.templeName} Temple`);
+    image.setAttribute("loading", "lazy")
+
+    templeSection.appendChild(heading);
+    templeSection.appendChild(location);
+    templeSection.appendChild(dedicated);
+    templeSection.appendChild(area);
+    templeSection.appendChild(image);
+}
+
+function showTemples(temples) {
+    temples.forEach(temple => {
+        let templeSection = document.createElement("section");
+        templeSection.classList.add("temple");
+        populateSection(temple, templeSection);
+        const templeList = document.getElementById("templeList");
+        templeList.appendChild(templeSection)
+    });
+}
+
+function getNewTemples(temples) {
+    let newTemples = [];
+    temples.forEach(temple => {
+        if (temple.dedicated > 2000) {
+            newTemples.push(temple);
+        }
+    });
+
+    return newTemples;
+}
+
+function getOldTemples(temples) {
+    let oldTemples = [];
+    temples.forEach(temple => {
+        if (temple.dedicated < 1900) {
+            oldTemples.push(temple);
+        }
+    });
+
+    return oldTemples;
+}
+
+function getLargeTemples(temples) {
+    let largeTemples = [];
+    temples.forEach(temple => {
+        if (temple.area > 90000) {
+            largeTemples.push(temple);
+        }
+    });
+
+    return largeTemples;
+}
+
+function getSmallTemples(temples) {
+    let smallTemples = [];
+    temples.forEach(temple => {
+        if (temple.area < 10000) {
+            smallTemples.push(temple);
+        }
+    });
+
+    return smallTemples;
 }
 
 document.getElementById("lastModified").textContent = "Last Modfied: " + document.lastModified;
@@ -105,10 +177,4 @@ navButton.addEventListener("click", function() {
     }
 });
 
-temples.forEach(temple => {
-    let templeSection = document.createElement("section");
-    templeSection.classList.add("temple");
-    templeSection.innerHTML = templeHTML(temple.templeName, temple.location, temple.dedicated, temple.area, temple.imageUrl);
-    const templeList = document.getElementById("templeList");
-    templeList.appendChild(templeSection)
-});
+showTemples(temples);
