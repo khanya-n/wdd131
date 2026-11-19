@@ -4,6 +4,7 @@
     --light-colour: #a3bbad;
     --dark-colour: #0e1143;
     --default-size: 1rem;
+    --small-size: .5rem;
 }
 
 * {
@@ -41,7 +42,7 @@ nav {
 nav.open {
     display: flex;
     flex-flow: column wrap;
-    margin: .5rem auto;
+    margin: var(--small-size) auto;
 }
 
 nav a{
@@ -63,6 +64,10 @@ h1 {
     padding: 3rem 0 2rem;
     font-weight: 600;
     text-align: center;
+}
+
+h2 {
+    font-weight: 500;
 }
 
 footer p,
@@ -88,14 +93,33 @@ footer {
 .temple {
     text-align: center;
     padding: var(--default-size);
+    margin: var(--small-size);
+    background-color: #aabbbb;
+    border: 1px solid var(--light-accent);
+}
+
+.temple p {
     font-weight: 300;
+    padding: auto var(--default-size);
 }
 
 .temple img {
     width: 90%;
-    max-height: 225px;
+    max-height: 200px;
+    margin: var(--small-size) 0;
+    animation: fade 10s;
 }
 
 .temple span{
-    text-align: right;
+    font-weight: 400;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
