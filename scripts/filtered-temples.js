@@ -2,6 +2,11 @@ const year = document.getElementById("currentyear");
 const today = new Date();
 const nav = document.getElementById("nav");
 const navButton = document.getElementById("navButton");
+const homeLink = document.getElementById("home");
+const oldLink = document.getElementById("old");
+const newLink = document.getElementById("new");
+const largeLink = document.getElementById("large");
+const smallLink = document.getElementById("small");
 
 const temples = [
     {
@@ -99,7 +104,7 @@ function populateSection(temple, templeSection) {
     area.innerHTML = `<span>Size:</span> ${temple.area} sq ft`
     image.setAttribute("src", temple.imageUrl);
     image.setAttribute("alt", `${temple.templeName} Temple`);
-    image.setAttribute("loading", "lazy")
+    image.setAttribute("loading", "lazy");
 
     templeSection.appendChild(heading);
     templeSection.appendChild(location);
@@ -109,11 +114,12 @@ function populateSection(temple, templeSection) {
 }
 
 function showTemples(temples) {
+    const templeList = document.getElementById("templeList");
+    templeList.replaceChildren();
     temples.forEach(temple => {
         let templeSection = document.createElement("section");
         templeSection.classList.add("temple");
         populateSection(temple, templeSection);
-        const templeList = document.getElementById("templeList");
         templeList.appendChild(templeSection)
     });
 }
@@ -121,7 +127,8 @@ function showTemples(temples) {
 function getNewTemples(temples) {
     let newTemples = [];
     temples.forEach(temple => {
-        if (temple.dedicated > 2000) {
+        let dedicationYear = temple.dedicated.slice(0, 4);
+        if (parseInt(dedicationYear) > 2000) {
             newTemples.push(temple);
         }
     });
@@ -132,7 +139,8 @@ function getNewTemples(temples) {
 function getOldTemples(temples) {
     let oldTemples = [];
     temples.forEach(temple => {
-        if (temple.dedicated < 1900) {
+        let dedicationYear = temple.dedicated.slice(0, 4);
+        if (parseInt(dedicationYear) < 1900) {
             oldTemples.push(temple);
         }
     });
@@ -178,3 +186,23 @@ navButton.addEventListener("click", function() {
 });
 
 showTemples(temples);
+
+homeLink.addEventListener("click", function() {
+    showTemples(temples);
+});
+
+oldLink.addEventListener("click", function() {
+    showTemples(getOldTemples(temples));
+});
+
+newLink.addEventListener("click", function() {
+    showTemples(getNewTemples(temples));
+});
+
+largeLink.addEventListener("click", function() {
+    showTemples(getLargeTemples(temples));
+});
+
+smallLink.addEventListener("click", function() {
+    showTemples(getSmallTemples(temples));
+});
